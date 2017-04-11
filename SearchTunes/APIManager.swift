@@ -11,7 +11,7 @@ import Foundation
 public class APIManager{
 
     static let shared: APIManager = APIManager()
-    let url = "https://itunes.apple.com/search?media=music&entity=song&term=abba"
+    let urlString = "https://itunes.apple.com/search?media=music&entity=song&term=abba"
     let session = URLSession(configuration: .default)
    
 }

@@ -10,19 +10,16 @@ import Foundation
 
 class TuneService{
     // implement completion handler
-    typealias JSONDictionary = [String: Any?]
+    
     
     func getTuneResults(withFilter filter: String = "", completionHandler: @escaping (_ data: JSONDictionary) -> (),
                         errorHandler: @escaping (_ error: Error) -> ()){
-        let url:String
-        if filter.isEmpty{
-            url = APIManager.shared.url
-        }else{
-            url =  (APIManager.shared.url+" "+filter).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        }
+        
+        let urlString = filter.isEmpty ? APIManager.shared.urlString : (APIManager.shared.urlString+" "+filter).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
        
-        print("Esta es la:\(url)")
-        let task = APIManager.shared.session.dataTask(with: URL(string: url)!){data, response, error in
+        
+        let task = APIManager.shared.session.dataTask(with: URL(string: urlString)!){data, response, error in
             if let error = error{
                 print("DataTask Error: \(error.localizedDescription)\n")
                 errorHandler(error)

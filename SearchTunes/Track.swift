@@ -20,7 +20,7 @@ struct Track{
         self.previewURL = previewURL
         
     }
-    init (with dict: [String:AnyObject] ){
+    init (with dict: JSONDictionary){
         name = dict["trackName"] as! String
         artist = dict["artistName"] as! String
         previewURL = URL(string:dict["previewUrl"] as! String)!

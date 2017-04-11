@@ -10,19 +10,13 @@ import Foundation
 
 class TuneManager{
     let service = TuneService()
-    typealias  JSONDictionary = [String:AnyObject]
+    
  
     func persistTunes(withFilter filter: String = "", completionHandler: @escaping (_ tracks: [Track]) -> (), errorHandler: @escaping (_ error: Error) -> ()) {
-        var tracks : [Track] = []
-        tracks = cachedTracks(tracks: tracks)
-        if !filter.isEmpty{
-            tracks = tracks.filter { track in
-                return (track.name.lowercased().contains(filter.lowercased()))
-            }
-        }
+        
         service.getTuneResults(withFilter: filter,
                                completionHandler: { (dict) in
-                                    completionHandler(self.parseJSON(with: dict as JSONDictionary, to: tracks))
+                                    completionHandler(self.getParsedTracks(fromJSONDictionary: dict))
                                 },
                                errorHandler:{ (error) in
                                     print("DataTask Error: \(error.localizedDescription)\n")
@@ -31,10 +25,24 @@ class TuneManager{
         
         
     }
-    private func parseJSON(with dict: JSONDictionary, to tracks: [Track]) -> [Track]{
-        var tracks = tracks
+    func getCachedTracks(withFilter filter: String = "")-> [Track]{
+        var tracks : [Track] = [
+            Track("Angel Eyes", artist: "ABBA", previewURL: URL(string:"http://a1896.phobos.apple.com/us/r30/Music/c3/15/ef/mzm.blsxeimy.aac.p.m4a")!),
+            Track("Chiquitita", artist: "ABBA", previewURL: URL(string:"http://a1988.phobos.apple.com/us/r30/Music/e4/fe/20/mzm.rtvizizr.aac.p.m4a")!),
+            Track("Summer Night City", artist: "ABBA", previewURL: URL(string:"http://a663.phobos.apple.com/us/r30/Music/51/c3/4b/mzm.uzosmanl.aac.p.m4a")!)
+        ]
         
+        if !filter.isEmpty{
+            tracks = tracks.filter { track in
+                return (track.name.lowercased().contains(filter.lowercased()))
+            }
+        }
         
+        return tracks
+    
+    }
+    private func getParsedTracks(fromJSONDictionary dict: JSONDictionary) -> [Track]{
+        var tracks : [Track] = []
        
         //: Check the `results` value is an array:
         guard let array = dict["results"] as? [Any] else {
@@ -49,27 +57,11 @@ class TuneManager{
                 print("Problem parsing trackDictionary\n")
             }
         }
-        
-        
-        
-        print(tracks)
         return(tracks)
         
-        
-        
-        
-    
     }
 
-    private func cachedTracks( tracks: [Track]) -> [Track]{
-        var tracks = tracks
-        tracks.append(Track("Angel Eyes", artist: "ABBA", previewURL: URL(string:"http://a1896.phobos.apple.com/us/r30/Music/c3/15/ef/mzm.blsxeimy.aac.p.m4a")!))
-        tracks.append(Track("Chiquitita", artist: "ABBA", previewURL: URL(string:"http://a1988.phobos.apple.com/us/r30/Music/e4/fe/20/mzm.rtvizizr.aac.p.m4a")!))
-        tracks.append(Track("Summer Night City", artist: "ABBA", previewURL: URL(string:"http://a663.phobos.apple.com/us/r30/Music/51/c3/4b/mzm.uzosmanl.aac.p.m4a")!))
-        
-        return tracks
-        
-    }
+
     
 
 

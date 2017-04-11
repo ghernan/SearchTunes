@@ -40,11 +40,14 @@ class TuneController: UIViewController {
     }
     
     func getTunes(withFilter filter: String = ""){
+        
+        
         activityIndicator.startAnimating()
         activityIndicator.backgroundColor = UIColor.white
         trackManager.persistTunes(withFilter: filter,
-                                  completionHandler: { (tracks) in
-                                    
+                                  completionHandler: { (tracksFromServer) in
+                                    var tracks: [Track] = self.trackManager.getCachedTracks(withFilter: filter)
+                                    tracks.append(contentsOf: tracksFromServer)
                                     if filter.isEmpty{
                                         self.tracks = tracks
                                     }else{

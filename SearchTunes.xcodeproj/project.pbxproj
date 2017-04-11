@@ -19,6 +19,7 @@
 		9C15C0061E94D62900BC322E /* TuneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C0051E94D62900BC322E /* TuneManager.swift */; };
 		9C15C0081E94D67200BC322E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C0071E94D67200BC322E /* Track.swift */; };
 		9C15C00C1E95499E00BC322E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C00B1E95499E00BC322E /* TrackCell.swift */; };
+		9CA011481E9CA60400CF1C60 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA011471E9CA60400CF1C60 /* TypeAlias.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9C15C0051E94D62900BC322E /* TuneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneManager.swift; sourceTree = "<group>"; };
 		9C15C0071E94D67200BC322E /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		9C15C00B1E95499E00BC322E /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		9CA011471E9CA60400CF1C60 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				9C15BFD61E94CC7800BC322E /* Assets.xcassets */,
 				9C15BFD81E94CC7800BC322E /* LaunchScreen.storyboard */,
 				9C15BFDB1E94CC7800BC322E /* Info.plist */,
+				9CA011471E9CA60400CF1C60 /* TypeAlias.swift */,
 			);
 			path = SearchTunes;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				9C15C0041E94D0E400BC322E /* TuneService.swift in Sources */,
 				9C15BFD21E94CC7800BC322E /* TuneController.swift in Sources */,
 				9C15BFD01E94CC7800BC322E /* AppDelegate.swift in Sources */,
+				9CA011481E9CA60400CF1C60 /* TypeAlias.swift in Sources */,
 				9C15C0081E94D67200BC322E /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +586,7 @@
 				9C15BFF61E94CC7800BC322E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C15BFF71E94CC7800BC322E /* Build configuration list for PBXNativeTarget "SearchTunesTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +595,7 @@
 				9C15BFF91E94CC7800BC322E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C15BFFA1E94CC7800BC322E /* Build configuration list for PBXNativeTarget "SearchTunesUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +604,7 @@
 				9C15BFFC1E94CC7800BC322E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
