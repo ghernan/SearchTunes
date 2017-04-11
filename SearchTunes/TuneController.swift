@@ -49,6 +49,7 @@ class TuneController: UIViewController {
                                     var tracks: [Track] = self.trackManager.getCachedTracks(withFilter: filter)
                                     tracks.append(contentsOf: tracksFromServer)
                                     if filter.isEmpty{
+                                        
                                         self.tracks = tracks
                                     }else{
                                         self.filteredTracks = tracks
