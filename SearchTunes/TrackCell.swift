@@ -9,6 +9,10 @@
 import UIKit
 
 class TrackCell: UITableViewCell {
+    
+    public static var reusableIdentifier: String{
+        return String(describing: self)
+    }
 
     @IBOutlet weak var songLabel: UILabel!
     

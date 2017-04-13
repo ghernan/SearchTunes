@@ -10,6 +10,7 @@ import UIKit
 
 class TuneController: UIViewController {
     var tracks: [Track] =  []
+    var cancelFlag:Bool = false
     var filteredTracks: [Track] = []
     let trackManager = TuneManager()
     let searchController = UISearchController(searchResultsController: nil)
@@ -39,9 +40,9 @@ class TuneController: UIViewController {
         
     }
     
-    func getTunes(withFilter filter: String = ""){
-        
-        
+    func getTunes(){
+        let filter: String = searchController.searchBar.text!
+        print("updating")
         activityIndicator.startAnimating()
         activityIndicator.backgroundColor = UIColor.white
         trackManager.persistTunes(withFilter: filter,
@@ -67,8 +68,7 @@ class TuneController: UIViewController {
 extension TuneController: UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
-        
-        getTunes(withFilter: searchController.searchBar.text!)
+             
     }
     
 
@@ -78,27 +78,32 @@ extension TuneController: UISearchBarDelegate{
     
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("cancel")
+        cancelFlag = true
         tableView.reloadData()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(getTunes), object: nil)
+        self.perform(#selector(getTunes), with: nil, afterDelay: 1.5)
     }
 
 }
 extension TuneController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive && !(searchController.searchBar.text?.isEmpty)!{
+        if searchController.isActive && !(searchController.searchBar.text?.isEmpty)! && !cancelFlag{
             return filteredTracks.count
         }
         
+        cancelFlag = false
         return tracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell")! as! TrackCell
-        if searchController.isActive && !(searchController.searchBar.text?.isEmpty)!{
-            cell.configureCell(WithTrack: filteredTracks[indexPath.row])
-        }else{
-            cell.configureCell(WithTrack: tracks[indexPath.row])
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackCell.reusableIdentifier)! as! TrackCell
+        let index = indexPath.row
+        let track = (searchController.isActive && !(searchController.searchBar.text?.isEmpty)!) ? filteredTracks[index] : tracks[index]
+        cell.configureCell(WithTrack: track)
         return cell
     }
 }

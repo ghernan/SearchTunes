@@ -52,7 +52,19 @@ class TuneManager{
         //Iterate over the array, extracting values to create a new Track object:
         for trackDictionary in array {
             if let trackDictionary = trackDictionary as? JSONDictionary {
-                tracks.append(Track(with: trackDictionary))
+                let newTrack = Track(with: trackDictionary)
+                if !(tracks.contains(where: { (track) -> Bool in
+                    if newTrack != track{
+                        return false
+                    }
+                    else{
+                        return true
+                    }
+                })){
+                    tracks.append(newTrack)
+                
+                }
+                
             } else {
                 print("Problem parsing trackDictionary\n")
             }

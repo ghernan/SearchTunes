@@ -26,5 +26,15 @@ struct Track{
         previewURL = URL(string:dict["previewUrl"] as! String)!
     }
     
+    
 }
+
+extension Track : Equatable{
+    
+    public static func ==(t1: Track, t2: Track) -> Bool{
+        return t1.name == t2.name && t1.artist == t2.artist
+    }
+
+}
+
 
