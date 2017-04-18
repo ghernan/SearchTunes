@@ -20,8 +20,7 @@ class TrackCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        songLabel.sizeToFit()
-        artistLabel.sizeToFit()
+        
     }
 
     

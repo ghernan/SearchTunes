@@ -45,29 +45,20 @@ class TuneManager{
         var tracks : [Track] = []
        
         //: Check the `results` value is an array:
-        guard let array = dict["results"] as? [Any] else {
+        guard let results = dict["results"] as? [Any] else {
             print("Dictionary does not contain results key\n")
             return tracks
         }
         //Iterate over the array, extracting values to create a new Track object:
-        for trackDictionary in array {
-            if let trackDictionary = trackDictionary as? JSONDictionary {
-                let newTrack = Track(with: trackDictionary)
-                if !(tracks.contains(where: { (track) -> Bool in
-                    if newTrack != track{
-                        return false
-                    }
-                    else{
-                        return true
-                    }
-                })){
-                    tracks.append(newTrack)
-                
-                }
-                
-            } else {
-                print("Problem parsing trackDictionary\n")
+        for trackDictionary in results {
+            guard let trackDictionary = trackDictionary as? JSONDictionary else {
+                print("Could not parse JSON object")
+                continue
             }
+            let newTrack = Track(with: trackDictionary)
+            if !(tracks.contains{ newTrack == $0}){
+                    tracks.append(newTrack)
+            }          
         }
         return(tracks)
         

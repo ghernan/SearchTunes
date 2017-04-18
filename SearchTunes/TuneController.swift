@@ -20,6 +20,7 @@ class TuneController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //activityIndicator.hidesWhenStopped = false
+        
         configureSearchBar()
         configureActivityIndicator()
         getTunes()
@@ -48,15 +49,19 @@ class TuneController: UIViewController {
         trackManager.persistTunes(withFilter: filter,
                                   completionHandler: { (tracksFromServer) in
                                     var tracks: [Track] = self.trackManager.getCachedTracks(withFilter: filter)
-                                    tracks.append(contentsOf: tracksFromServer)
+                                    let filteredTracksFromServer = tracksFromServer.filter { !tracks.contains($0)}
+                                    tracks.append(contentsOf: filteredTracksFromServer)
                                     if filter.isEmpty{
                                         
                                         self.tracks = tracks
                                     }else{
                                         self.filteredTracks = tracks
                                     }
-                                    self.tableView.reloadData()
-                                    self.activityIndicator.stopAnimating()
+                                    DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                        self.activityIndicator.stopAnimating()
+                                    }
+                                    
                                     
                                 },
                                   errorHandler: { (error) in
