@@ -12,8 +12,7 @@ class TuneService{
     // implement completion handler
     
     
-    func getTuneResults(withFilter filter: String = "", completionHandler: @escaping (_ data: JSONDictionary) -> (),
-                        errorHandler: @escaping (_ error: Error) -> ()){
+    func getTuneResults(withFilter filter: String = "", completionHandler: @escaping (_ data: JSONDictionary) -> (),errorHandler: @escaping (_ error: Error) -> ()){
         
         let urlString = filter.isEmpty ? APIManager.shared.urlString : (APIManager.shared.urlString+" "+filter).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         

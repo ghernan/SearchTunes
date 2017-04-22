@@ -12,18 +12,25 @@ struct Track{
     var name: String
     var artist: String
     var previewURL: URL
+    var trackViewURL: URL
+    var artworkURL: URL
     
     
-    init(_ name: String, artist: String, previewURL: URL){
+    init(_ name: String, artist: String, previewURL: URL,
+         trackViewURL: URL, artworkURL: URL){
         self.name = name
         self.artist = artist
         self.previewURL = previewURL
+        self.trackViewURL = trackViewURL
+        self.artworkURL = artworkURL
         
     }
     init (with dict: JSONDictionary){
         name = dict["trackName"] as! String
         artist = dict["artistName"] as! String
         previewURL = URL(string:dict["previewUrl"] as! String)!
+        trackViewURL = URL(string:dict["trackViewUrl"] as! String)!
+        artworkURL = URL(string:dict["artworkUrl100"] as! String)!
     }
     
     
