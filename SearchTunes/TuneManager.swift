@@ -28,9 +28,9 @@ class TuneManager{
     func getCachedTracks(withFilter filter: String = "")-> [Track]{
         var tracks : [Track] = [
             
-            Track("Angel Eyes", artist: "ABBA", previewURL: URL(string:"http://a1896.phobos.apple.com/us/r30/Music/c3/15/ef/mzm.blsxeimy.aac.p.m4a")!, trackViewURL: URL(string:"https://itunes.apple.com/us/album/angel-eyes/id510714434?i=510714438&uo=4")!, artworkURL: URL(string:"http://is1.mzstatic.com/image/thumb/Music/v4/09/a2/76/09a2765c-8c2a-9dee-6774-4a95a7f1e437/source/100x100bb.jpg")!),
+            Track("Angel Eyes", artist: "ABBA", previewURL: URL(string:"http://a1988.phobos.apple.com/us/r30/Music/e4/fe/20/mzm.rtvizizr.aac.p.m4a")!, trackViewURL: URL(string:"https://itunes.apple.com/us/album/angel-eyes/id510714434?i=510714438&uo=4")!, artworkURL: URL(string:"http://is1.mzstatic.com/image/thumb/Music/v4/09/a2/76/09a2765c-8c2a-9dee-6774-4a95a7f1e437/source/100x100bb.jpg")!),
             
-            Track("Chiquitita", artist: "ABBA", previewURL: URL(string:"http://a1988.phobos.apple.com/us/r30/Music/e4/fe/20/mzm.rtvizizr.aac.p.m4a")!, trackViewURL: URL(string:"https://itunes.apple.com/us/album/chiquitita/id850009855?i=850009876&uo=4")!, artworkURL: URL(string:"http://is1.mzstatic.com/image/thumb/Music4/v4/95/20/8f/95208fc6-629f-6ac9-c8db-69357b9b69d2/source/100x100bb.jpg")!),
+            Track("Chiquitita", artist: "ABBA", previewURL: URL(string:"http://a888.phobos.apple.com/us/r30/Music4/v4/2f/40/12/2f40126a-c664-540d-ca86-cc6ee622072e/mzaf_2428154513987494316.plus.aac.p.m4a")!, trackViewURL: URL(string:"https://itunes.apple.com/us/album/chiquitita/id850009855?i=850009876&uo=4")!, artworkURL: URL(string:"http://is1.mzstatic.com/image/thumb/Music4/v4/95/20/8f/95208fc6-629f-6ac9-c8db-69357b9b69d2/source/100x100bb.jpg")!),
             
             Track("Summer Night City", artist: "ABBA", previewURL: URL(string:"http://a663.phobos.apple.com/us/r30/Music/51/c3/4b/mzm.uzosmanl.aac.p.m4a")!, trackViewURL: URL(string:"https://itunes.apple.com/us/album/summer-night-city/id510714434?i=510714437&uo=4")!, artworkURL: URL(string:"http://is1.mzstatic.com/image/thumb/Music/v4/09/a2/76/09a2765c-8c2a-9dee-6774-4a95a7f1e437/source/100x100bb.jpg")!)
         ]

@@ -22,6 +22,19 @@ class TuneDetailsManager{
                                 })
     
      }
-    
-
+    func downloadTune(fromURL url: URL, completionHandler: @escaping(_ image:URL)->(), errorHandler:@escaping(_ error:Error)->()){
+        detailsService.getTuneData(fromURL: url,
+                                   completionHandler: { (ulr) in
+                                    completionHandler(url)
+            
+                                    },
+                                   errorHandler: {error in
+                                    errorHandler(error)
+                                    })
+    }
+    func openLink(withURL url: URL){
+        UIApplication.shared.open(url, options: [:]) { (opened) in
+            print("URL did open: \(opened)")
+        }
+    }
 }

@@ -19,6 +19,7 @@
 		9C15C0061E94D62900BC322E /* TuneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C0051E94D62900BC322E /* TuneManager.swift */; };
 		9C15C0081E94D67200BC322E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C0071E94D67200BC322E /* Track.swift */; };
 		9C15C00C1E95499E00BC322E /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15C00B1E95499E00BC322E /* TrackCell.swift */; };
+		9C7AC2111EAE5E5400C8BF5A /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7AC2101EAE5E5400C8BF5A /* MediaPlayer.swift */; };
 		9CA011481E9CA60400CF1C60 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA011471E9CA60400CF1C60 /* TypeAlias.swift */; };
 		9CEE18751EAA7F5300CC536D /* TuneDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE18741EAA7F5300CC536D /* TuneDetailsController.swift */; };
 		9CEE18771EABBFC900CC536D /* TuneDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE18761EABBFC900CC536D /* TuneDetailsService.swift */; };
@@ -61,6 +62,7 @@
 		9C15C0051E94D62900BC322E /* TuneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneManager.swift; sourceTree = "<group>"; };
 		9C15C0071E94D67200BC322E /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		9C15C00B1E95499E00BC322E /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		9C7AC2101EAE5E5400C8BF5A /* MediaPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		9CA011471E9CA60400CF1C60 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		9CEE18741EAA7F5300CC536D /* TuneDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneDetailsController.swift; sourceTree = "<group>"; };
 		9CEE18761EABBFC900CC536D /* TuneDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TuneDetailsService.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				9C15C0051E94D62900BC322E /* TuneManager.swift */,
 				9CEE18781EABC63B00CC536D /* TuneDetailsManager.swift */,
+				9C7AC2101EAE5E5400C8BF5A /* MediaPlayer.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				9CEE18791EABC63B00CC536D /* TuneDetailsManager.swift in Sources */,
 				9C15C0021E94CE5A00BC322E /* APIManager.swift in Sources */,
 				9C15C0061E94D62900BC322E /* TuneManager.swift in Sources */,
+				9C7AC2111EAE5E5400C8BF5A /* MediaPlayer.swift in Sources */,
 				9CEE18771EABBFC900CC536D /* TuneDetailsService.swift in Sources */,
 				9C15C0041E94D0E400BC322E /* TuneService.swift in Sources */,
 				9C15BFD21E94CC7800BC322E /* TuneController.swift in Sources */,

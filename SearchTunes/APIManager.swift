@@ -13,5 +13,6 @@ public class APIManager{
     static let shared: APIManager = APIManager()
     let urlString = "https://itunes.apple.com/search?media=music&entity=song&term=abba"
     let session = URLSession(configuration: .default)
+    let downloadSession = URLSession.shared
    
 }

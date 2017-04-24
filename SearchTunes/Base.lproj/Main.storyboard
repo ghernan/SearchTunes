@@ -110,15 +110,75 @@
                                     <constraint firstAttribute="width" constant="200" id="zs4-7U-pW2"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t75-Dr-bgS">
+                                <rect key="frame" x="16" y="323" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UFI-9j-C0u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyK-ZV-Kje">
+                                <rect key="frame" x="16" y="382" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="exR-Pa-qjz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmH-EV-BGL">
+                                <rect key="frame" x="16" y="450" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nuu-HJ-Gsp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <state key="normal" title="Play Preview">
+                                    <color key="titleColor" red="1" green="0.52653175080000003" blue="0.19675722570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playMedia:" destination="eHH-UJ-G5p" eventType="touchUpInside" id="ijH-gH-I5d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fr-J6-GSv">
+                                <rect key="frame" x="16" y="508" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9PO-9t-THs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                <state key="normal" title="Visit iTunes"/>
+                                <connections>
+                                    <action selector="toItunes:" destination="eHH-UJ-G5p" eventType="touchUpInside" id="TL4-uh-fWH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fmH-EV-BGL" secondAttribute="trailing" id="1SR-cs-I8g"/>
+                            <constraint firstItem="HyK-ZV-Kje" firstAttribute="centerX" secondItem="Fxo-sX-FeA" secondAttribute="centerX" id="2QN-9T-IVU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1fr-J6-GSv" secondAttribute="trailing" id="3f0-Hv-9ea"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fmH-EV-BGL" secondAttribute="leading" id="7gL-ZJ-wTA"/>
                             <constraint firstItem="7eM-4g-dBS" firstAttribute="top" secondItem="cgr-EN-mmq" secondAttribute="bottom" constant="49" id="7n1-Y3-jU4"/>
+                            <constraint firstItem="fmH-EV-BGL" firstAttribute="centerX" secondItem="Fxo-sX-FeA" secondAttribute="centerX" id="9bg-9b-3rA"/>
+                            <constraint firstItem="HyK-ZV-Kje" firstAttribute="top" secondItem="t75-Dr-bgS" secondAttribute="bottom" constant="29" id="Bmw-8G-PNl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HyK-ZV-Kje" secondAttribute="leading" id="CvR-OG-bBW"/>
+                            <constraint firstItem="1fr-J6-GSv" firstAttribute="centerX" secondItem="Fxo-sX-FeA" secondAttribute="centerX" id="G3l-uF-9jF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HyK-ZV-Kje" secondAttribute="trailing" id="PSt-06-YQ0"/>
                             <constraint firstItem="7eM-4g-dBS" firstAttribute="centerX" secondItem="Fxo-sX-FeA" secondAttribute="centerX" id="Q10-zP-EBi"/>
+                            <constraint firstItem="t75-Dr-bgS" firstAttribute="top" secondItem="7eM-4g-dBS" secondAttribute="bottom" constant="10" id="QXo-Kh-8PH"/>
+                            <constraint firstItem="1fr-J6-GSv" firstAttribute="top" secondItem="fmH-EV-BGL" secondAttribute="bottom" constant="8" id="WKM-c1-G6k"/>
+                            <constraint firstItem="t75-Dr-bgS" firstAttribute="centerX" secondItem="Fxo-sX-FeA" secondAttribute="centerX" id="bsz-sl-mhv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1fr-J6-GSv" secondAttribute="leading" id="eu1-wZ-SCN"/>
+                            <constraint firstItem="fmH-EV-BGL" firstAttribute="top" secondItem="HyK-ZV-Kje" secondAttribute="bottom" constant="38" id="jxN-1v-Ni4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="t75-Dr-bgS" secondAttribute="leading" id="lsd-eH-i4s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t75-Dr-bgS" secondAttribute="trailing" id="qcg-Bc-Zsb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="artistLabel" destination="t75-Dr-bgS" id="l8K-vD-Qwt"/>
                         <outlet property="tuneImage" destination="7eM-4g-dBS" id="RBn-IZ-bEp"/>
+                        <outlet property="tuneLabel" destination="HyK-ZV-Kje" id="MOM-mu-rUI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPd-mV-iDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,7 +190,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PtI-cg-ZZQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IQf-5W-BVF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IQf-5W-BVF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
