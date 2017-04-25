@@ -14,8 +14,7 @@ class TuneDetailsController: UIViewController {
     var track: Track!
     var player: MediaPlayer = MediaPlayer()
     
-    @IBOutlet weak var artistLabel: UILabel!
-    
+    @IBOutlet weak var artistLabel: UILabel!    
     @IBOutlet weak var tuneLabel: UILabel!
     @IBOutlet weak var tuneImage: UIImageView!
 
