@@ -10,7 +10,7 @@ import UIKit
 
 
 class TuneDetailsController: UIViewController {
-    var detailManager: TuneDetailsManager = TuneDetailsManager()
+    var detailManager: TuneManager = TuneManager()
     var track: Track!
     var player: MediaPlayer = MediaPlayer()
     
@@ -53,7 +53,7 @@ class TuneDetailsController: UIViewController {
                                     })
     }
     func playTune(){
-        detailManager.downloadTune(fromURL: track.previewURL,
+        detailManager.downloadTrack(fromURL: track.previewURL,
                                    completionHandler: { (tuneWithURL) in
                                         self.player.configurePlayer(withURL: tuneWithURL)
           

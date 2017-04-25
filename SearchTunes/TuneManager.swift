@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class TuneManager{
     let service = TuneService()
     
@@ -66,6 +66,34 @@ class TuneManager{
         return(tracks)
         
     }
+    
+    func downloadImage(withURL url: URL, completionHandler: @escaping(_ image:UIImage)->(), errorHandler:@escaping(_ error:Error)->()){
+        service.getImageData(fromUrl: url,
+                                    completionHandler: { (imgData) in
+                                        completionHandler(UIImage(data:imgData)!)
+                                        
+        },
+                                    errorHandler: {error in
+                                        errorHandler(error)
+        })
+        
+    }
+    func downloadTrack(fromURL url: URL, completionHandler: @escaping(_ url:URL)->(), errorHandler:@escaping(_ error:Error)->()){
+        service.getTuneURL(fromURL: url,
+                                  completionHandler: { (ulr) in
+                                    completionHandler(url)
+                                    
+        },
+                                  errorHandler: {error in
+                                    errorHandler(error)
+        })
+    }
+    func openLink(withURL url: URL){
+        UIApplication.shared.open(url, options: [:]) { (opened) in
+            print("URL did open: \(opened)")
+        }
+    }
+
 
 
     

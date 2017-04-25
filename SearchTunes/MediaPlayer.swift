@@ -9,9 +9,10 @@
 import Foundation
 import AVFoundation
 
-private var player: AVPlayer!
+
 class MediaPlayer{
     
+private var player: AVPlayer!
     func configurePlayer(withURL url: URL){
         do{
             let playerItem =  AVPlayerItem(url:url)
@@ -22,7 +23,4 @@ class MediaPlayer{
         }
         
     }
-
-
-
 }
